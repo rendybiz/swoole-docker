@@ -40,7 +40,7 @@ RUN \
     rm -rf /var/lib/apt/lists/* $HOME/.composer/*-old.phar /usr/bin/qemu-*-static && \
     cd /var/www
 
-ENTRYPOINT ["/tini", "-g", "--", "/entrypoint.sh"]
-# CMD ["php", "artisan", "octane:start", "--host=0.0.0.0", "--port=9501"]
-CMD []
+# ENTRYPOINT ["/tini", "-g", "--", "/entrypoint.sh"]
+CMD ["php", "artisan", "octane:start", "--host=0.0.0.0", "--port=9501"]
+# CMD []
 WORKDIR "/var/www/"
