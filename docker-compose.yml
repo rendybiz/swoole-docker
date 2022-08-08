@@ -1,0 +1,13 @@
+version: '3'
+services:
+  swoole:
+    build: .
+    ports:
+      - 81:9501
+      - 82:9502
+    environment:
+        DATABASE_HOST: mysql
+    restart: always
+    volumes:
+    - "./app:/var/www"
+      
