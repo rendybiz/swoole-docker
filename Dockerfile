@@ -12,6 +12,12 @@ RUN chmod +x /tini
 
 COPY ./rootfilesystem/ /
 
+COPY ./app/install-php-extensions /usr/bin/
+
+RUN chmod +x /usr/bin/install-php-extensions
+
+RUN install-php-extensions pcntl
+
 RUN \
     curl -sfL https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
     chmod +x /usr/bin/composer                                                                     && \
@@ -31,9 +37,10 @@ RUN \
         --enable-openssl \
         --enable-sockets --enable-swoole-curl --enable-swoole-json --with-postgres && \
     mkdir -p /var/log/supervisor && \
-    rm -rf /var/lib/apt/lists/* $HOME/.composer/*-old.phar /usr/bin/qemu-*-static
+    rm -rf /var/lib/apt/lists/* $HOME/.composer/*-old.phar /usr/bin/qemu-*-static && \
+    cd /var/www
 
 ENTRYPOINT ["/tini", "-g", "--", "/entrypoint.sh"]
+# CMD ["php", "artisan", "octane:start", "--host=0.0.0.0", "--port=9501"]
 CMD []
-
 WORKDIR "/var/www/"
