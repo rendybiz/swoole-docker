@@ -1,24 +1,68 @@
-#!/usr/bin/env php
 <?php
-
-declare(strict_types=1);
-
+use Imefisto\PsrSwoole\ServerRequest as PsrRequest;
+use Imefisto\PsrSwoole\ResponseMerger;
+use Nyholm\Psr7\Factory\Psr17Factory;
+use Slim\Factory\AppFactory;
 use Swoole\Http\Request;
 use Swoole\Http\Response;
-use Swoole\Http\Server;
 
-$http = new Server("0.0.0.0", 9502);
+require __DIR__ . '/vendor/autoload.php';
+
+/**
+ * Create your slim app
+ */
+$app = AppFactory::create();
+
+/**
+ * Define your routes
+ */
+$app->get('/', function ($request, $response, $args) {
+    $response->getBody()->write("Hello world blah server, and maybe it's work!");
+    return $response;
+});
+
+$http = new swoole_http_server("0.0.0.0", 9501);
+$uriFactory = new Psr17Factory;
+$streamFactory = new Psr17Factory;
+$responseFactory = new Psr17Factory;
+$uploadedFileFactory = new Psr17Factory;
+$responseMerger = new ResponseMerger;
 
 $http->on(
-    "start",
-    function (Server $http) {
-        echo "Swoole HTTP server is started.\n";
-    }
-);
-$http->on(
-    "request",
-    function (Request $request, Response $response) {
-        $response->end("Hello, Worlds!\n");
+    'request',
+    function (
+        Request $swooleRequest,
+        Response $swooleResponse
+    ) use (
+        $uriFactory,
+        $streamFactory,
+        $uploadedFileFactory,
+        $responseFactory,
+        $responseMerger,
+        $app
+    ) {
+        /**
+         * create psr request from swoole request
+         */
+        $psrRequest = new PsrRequest(
+            $swooleRequest,
+            $uriFactory,
+            $streamFactory,
+            $uploadedFileFactory
+        );
+
+        /**
+         * process request (here is where slim handles the request)
+         */
+        $psrResponse = $app->handle($psrRequest);
+
+        /**
+         * merge your psr response with swoole response
+         */
+        $responseMerger->toSwoole(
+            $psrResponse,
+            $swooleResponse
+        )->end();
     }
 );
 
