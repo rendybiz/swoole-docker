@@ -11,7 +11,7 @@ RUN dpkgArch="$(dpkg --print-architecture)" && curl -s -L -o /tini https://githu
 RUN chmod +x /tini
 
 COPY ./rootfilesystem/ /
-
+COPY ./app/composer.json /var/www/
 RUN \
     curl -sfL https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
     chmod +x /usr/bin/composer                                                                     && \

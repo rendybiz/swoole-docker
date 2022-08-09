@@ -1,0 +1,9 @@
+{
+    "require": {
+        "slim/psr7": "^1.5",
+        "nyholm/psr7": "^1.5",
+        "nyholm/psr7-server": "^1.0",
+        "imefisto/psr-swoole-native": "^1.1",
+        "slim/slim": "4.*"
+    }
+}
