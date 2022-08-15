@@ -16,6 +16,8 @@ COPY ./app/install-php-extensions /usr/bin/
 
 RUN chmod +x /usr/bin/install-php-extensions
 
+# RUN chmod +x /var/www/mezzio/runner.sh
+
 RUN install-php-extensions pcntl
 
 RUN install-php-extensions intl
@@ -41,8 +43,7 @@ RUN \
     mkdir -p /var/log/supervisor && \
     rm -rf /var/lib/apt/lists/* $HOME/.composer/*-old.phar /usr/bin/qemu-*-static
 
-# ENTRYPOINT ["/tini", "-g", "--", "/entrypoint.sh"]
+# ENTRYPOINT ["/var/www/mezzio/runner.sh"]
 
-CMD [ "/var/www/mezzio/vendor/bin/laminas", "mezzio:swoole:start"]
-
+CMD []
 WORKDIR "/var/www/mezzio"

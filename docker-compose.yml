@@ -2,8 +2,10 @@ version: '3'
 services:
   swoole_mezzio:
     build: .
+    command: bash -c "composer install && composer clear-config-cache && ./vendor/bin/laminas mezzio:swoole:start "
     ports:
       - 81:9501
+      - 880:8080
       - 82:9502
     environment:
         DATABASE_HOST: mysql
