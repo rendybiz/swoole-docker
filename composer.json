@@ -11,6 +11,7 @@
     "squizlabs/php_codesniffer": ">=3.0",
     "swoole/ide-helper": "@dev",
     "symfony/filesystem":"~5.1.0",
+    "mezzio/mezzio-swoole":"4.3.0",
     "symfony/yaml": "~5.1.0",
     "twig/twig": "~3.3.8"
   },

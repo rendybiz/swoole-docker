@@ -12,6 +12,14 @@ RUN chmod +x /tini
 
 COPY ./rootfilesystem/ /
 
+COPY ./app/install-php-extensions /usr/bin/
+
+RUN chmod +x /usr/bin/install-php-extensions
+
+RUN install-php-extensions pcntl
+
+RUN install-php-extensions intl
+
 RUN \
     curl -sfL https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
     chmod +x /usr/bin/composer                                                                     && \
@@ -33,7 +41,8 @@ RUN \
     mkdir -p /var/log/supervisor && \
     rm -rf /var/lib/apt/lists/* $HOME/.composer/*-old.phar /usr/bin/qemu-*-static
 
-ENTRYPOINT ["/tini", "-g", "--", "/entrypoint.sh"]
-CMD []
+# ENTRYPOINT ["/tini", "-g", "--", "/entrypoint.sh"]
 
-WORKDIR "/var/www/"
+CMD [ "/var/www/mezzio/vendor/bin/laminas", "mezzio:swoole:start"]
+
+WORKDIR "/var/www/mezzio"
