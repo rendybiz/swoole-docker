@@ -1,10 +1,11 @@
 version: '3'
 services:
-  swoole:
+  swoole-mqtt:
     build: .
     ports:
       - 81:9501
       - 82:9502
+      - 1883:1883
     environment:
         DATABASE_HOST: mysql
     restart: always

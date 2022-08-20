@@ -1,0 +1,224 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f546af0dedca891261dad46b89c08515",
+    "packages": [
+        {
+            "name": "jesusslim/mqttclient",
+            "version": "1.52",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jesusslim/mqttclient.git",
+                "reference": "2f451f1f4e5457a4435f86389507d636b755d3b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jesusslim/mqttclient/zipball/2f451f1f4e5457a4435f86389507d636b755d3b7",
+                "reference": "2f451f1f4e5457a4435f86389507d636b755d3b7",
+                "shasum": ""
+            },
+            "require": {
+                "jesusslim/pinject": "1.2.3",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mqttclient\\src\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jesusslim",
+                    "email": "755808379@qq.com"
+                }
+            ],
+            "description": "php mqtt client",
+            "keywords": [
+                "mqtt"
+            ],
+            "support": {
+                "issues": "https://github.com/jesusslim/mqttclient/issues",
+                "source": "https://github.com/jesusslim/mqttclient/tree/1.52"
+            },
+            "time": "2019-05-21T10:00:47+00:00"
+        },
+        {
+            "name": "jesusslim/pinject",
+            "version": "1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jesusslim/pinject.git",
+                "reference": "035cd8b79948ac107263cee5f0dc0242792e55e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jesusslim/pinject/zipball/035cd8b79948ac107263cee5f0dc0242792e55e5",
+                "reference": "035cd8b79948ac107263cee5f0dc0242792e55e5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Inject\\": "Inject/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jesusslim",
+                    "email": "755808379@qq.com"
+                }
+            ],
+            "description": "inject in php",
+            "keywords": [
+                "inject"
+            ],
+            "support": {
+                "issues": "https://github.com/jesusslim/pinject/issues",
+                "source": "https://github.com/jesusslim/pinject/tree/master"
+            },
+            "time": "2017-05-26T06:47:07+00:00"
+        },
+        {
+            "name": "workerman/mqtt",
+            "version": "v1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/walkor/mqtt.git",
+                "reference": "0ed6617e719f38dac303d00d3ce1697d5d1bc280"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/walkor/mqtt/zipball/0ed6617e719f38dac303d00d3ce1697d5d1bc280",
+                "reference": "0ed6617e719f38dac303d00d3ce1697d5d1bc280",
+                "shasum": ""
+            },
+            "require": {
+                "workerman/workerman": ">=3.3.0"
+            },
+            "suggest": {
+                "ext-event": "For better performance. "
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Workerman\\Mqtt\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "walkor",
+                    "email": "walkor@workerman.net",
+                    "homepage": "https://www.workerman.net",
+                    "role": "Developer"
+                }
+            ],
+            "homepage": "https://www.workerman.net",
+            "keywords": [
+                "event-loop",
+                "mqtt",
+                "mqtt3",
+                "mqtt5.0",
+                "mqtt_client",
+                "php",
+                "workerman"
+            ],
+            "support": {
+                "email": "walkor@workerman.net",
+                "issues": "https://github.com/walkor/mqtt/issues",
+                "source": "https://github.com/walkor/mqtt/tree/v1.3"
+            },
+            "time": "2022-07-18T06:21:13+00:00"
+        },
+        {
+            "name": "workerman/workerman",
+            "version": "v4.0.42",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/walkor/workerman.git",
+                "reference": "83f09b50eaf7412504604030daa9e1f9c767e6c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/walkor/workerman/zipball/83f09b50eaf7412504604030daa9e1f9c767e6c3",
+                "reference": "83f09b50eaf7412504604030daa9e1f9c767e6c3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "suggest": {
+                "ext-event": "For better performance. "
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Workerman\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "walkor",
+                    "email": "walkor@workerman.net",
+                    "homepage": "http://www.workerman.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "An asynchronous event driven PHP framework for easily building fast, scalable network applications.",
+            "homepage": "http://www.workerman.net",
+            "keywords": [
+                "asynchronous",
+                "event-loop"
+            ],
+            "support": {
+                "email": "walkor@workerman.net",
+                "forum": "http://wenda.workerman.net/",
+                "issues": "https://github.com/walkor/workerman/issues",
+                "source": "https://github.com/walkor/workerman",
+                "wiki": "http://doc.workerman.net/"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/workerman",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://www.patreon.com/walkor",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-07-29T09:06:29+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
+}

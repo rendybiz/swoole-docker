@@ -1,0 +1,6 @@
+{
+    "require": {
+        "jesusslim/mqttclient": "^1.52",
+        "workerman/mqtt": "^1.3"
+    }
+}
