@@ -7,4 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Siler\\' => array($vendorDir . '/leocavalcante/siler/src'),
+    'RedBeanPHP\\' => array($vendorDir . '/gabordemooij/redbean/RedBeanPHP'),
+    'GraphQL\\' => array($vendorDir . '/webonyx/graphql-php/src'),
 );

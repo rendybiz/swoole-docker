@@ -46,12 +46,28 @@ class ComposerStaticInit0a01eab9d726105a18576bdc72525a1d
         array (
             'Siler\\' => 6,
         ),
+        'R' => 
+        array (
+            'RedBeanPHP\\' => 11,
+        ),
+        'G' => 
+        array (
+            'GraphQL\\' => 8,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Siler\\' => 
         array (
             0 => __DIR__ . '/..' . '/leocavalcante/siler/src',
+        ),
+        'RedBeanPHP\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gabordemooij/redbean/RedBeanPHP',
+        ),
+        'GraphQL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webonyx/graphql-php/src',
         ),
     );
 

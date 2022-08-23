@@ -1,0 +1,30 @@
+type Message {
+  id: Int
+  roomId: Int
+  body: String
+  timestamp: String
+}
+
+type Room {
+  id: Int
+  name: String
+  messages: [Message]
+}
+
+type People{
+  id: Int
+  name: String
+  phone: String
+}
+
+type Query {
+  messages(roomName: String): [Message]
+  rooms: [Room]
+  peoples:[People]
+}
+
+type Mutation {
+  start(roomName: String): Room
+  chat(roomName: String, body: String): Message
+  users(name: String, phone: String): People
+}

@@ -1,5 +1,7 @@
 {
     "require":{
-        "leocavalcante/siler": "^1.7"
+        "leocavalcante/siler": "^1.7",
+        "webonyx/graphql-php": "^14.11",
+        "gabordemooij/redbean": "^5.7"
     }
 }

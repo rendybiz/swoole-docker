@@ -26,20 +26,31 @@ require_once 'vendor/autoload.php';
 
 use Siler\Swoole;
 use Siler\Route;
+use Siler\GraphQL;
+
+$schema = include __DIR__.'/schemas/schema.php';
+
+$typeDefs = file_get_contents(__DIR__.'/schemas/schema.graphql');
+
 
 $restHandler = function (array $routeParams){
-    Swoole\emit('Hi , here is the siller');
+    Swoole\json(["data"=>'Hi , here is the siller']);
     
 };
 $restHandler2 = function (array $routeParams){
     Swoole\emit('Hello world , others');
     
 };
+$gqlHandler = function (array $routeParams) use ($schema){
+    GraphQL\init($schema);
+    Swoole\json(["data"=>'Hi , Graphql is here'], 401);
+};
 $handler = [$restHandler, $restHandler2];
-
-$server = function() use ($handler){
+$handlerFunc = ['gql'=>$gqlHandler];
+$server = function() use ($handler, $handlerFunc){
     Route\get('/', $handler[0]);
     Route\get('/other', $handler[1]);
+    Route\post('/gql', $handlerFunc['gql']);
     Swoole\emit('Not found', 404);
 };
 

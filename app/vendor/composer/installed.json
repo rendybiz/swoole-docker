@@ -1,6 +1,54 @@
 {
     "packages": [
         {
+            "name": "gabordemooij/redbean",
+            "version": "v5.7.2",
+            "version_normalized": "5.7.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gabordemooij/redbean.git",
+                "reference": "2c8ce8a57ed61fce34da1dabbf0f879d76e1ed26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/2c8ce8a57ed61fce34da1dabbf0f879d76e1ed26",
+                "reference": "2c8ce8a57ed61fce34da1dabbf0f879d76e1ed26",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.4"
+            },
+            "time": "2022-04-02T18:01:03+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "RedBeanPHP\\": "RedBeanPHP"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Gabor de Mooij",
+                    "email": "gabor@redbeanphp.com",
+                    "homepage": "https://redbeanphp.com"
+                }
+            ],
+            "description": "RedBeanPHP ORM",
+            "homepage": "https://redbeanphp.com/",
+            "keywords": [
+                "orm"
+            ],
+            "support": {
+                "issues": "https://github.com/gabordemooij/redbean/issues",
+                "source": "https://github.com/gabordemooij/redbean/tree/v5.7.2"
+            },
+            "install-path": "../gabordemooij/redbean"
+        },
+        {
             "name": "leocavalcante/siler",
             "version": "v1.7.9",
             "version_normalized": "1.7.9.0",
@@ -117,6 +165,75 @@
             ],
             "abandoned": true,
             "install-path": "../leocavalcante/siler"
+        },
+        {
+            "name": "webonyx/graphql-php",
+            "version": "v14.11.6",
+            "version_normalized": "14.11.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webonyx/graphql-php.git",
+                "reference": "6070542725b61fc7d0654a8a9855303e5e157434"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/6070542725b61fc7d0654a8a9855303e5e157434",
+                "reference": "6070542725b61fc7d0654a8a9855303e5e157434",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^7.1 || ^8"
+            },
+            "require-dev": {
+                "amphp/amp": "^2.3",
+                "doctrine/coding-standard": "^6.0",
+                "nyholm/psr7": "^1.2",
+                "phpbench/phpbench": "^1.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "0.12.82",
+                "phpstan/phpstan-phpunit": "0.12.18",
+                "phpstan/phpstan-strict-rules": "0.12.9",
+                "phpunit/phpunit": "^7.2 || ^8.5",
+                "psr/http-message": "^1.0",
+                "react/promise": "2.*",
+                "simpod/php-coveralls-mirror": "^3.0",
+                "squizlabs/php_codesniffer": "3.5.4"
+            },
+            "suggest": {
+                "psr/http-message": "To use standard GraphQL server",
+                "react/promise": "To leverage async resolving on React PHP platform"
+            },
+            "time": "2022-04-13T16:25:32+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "GraphQL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A PHP port of GraphQL reference implementation",
+            "homepage": "https://github.com/webonyx/graphql-php",
+            "keywords": [
+                "api",
+                "graphql"
+            ],
+            "support": {
+                "issues": "https://github.com/webonyx/graphql-php/issues",
+                "source": "https://github.com/webonyx/graphql-php/tree/v14.11.6"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/webonyx-graphql-php",
+                    "type": "open_collective"
+                }
+            ],
+            "install-path": "../webonyx/graphql-php"
         }
     ],
     "dev": true,
